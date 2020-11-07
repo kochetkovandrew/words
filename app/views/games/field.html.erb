@@ -1,0 +1,34 @@
+<input type="hidden" id="game-id" value="<%= @game.id %>">
+<input type="hidden" id="viewer" value="<%= @viewer %>">
+<input type="hidden" id="teams" value="<%= @game.teams %>">
+<input type="hidden" id="page" value="field">
+
+<div class="word-container">
+  <% @game.uwords.zip(@game.uresults).shuffle.each do |word| %>
+    <div class="word-item" data-word="<%= word[0] %>" style="width: <%= 100/@game.x %>%">
+      <% classes = 'btn word-btn' %>
+      <% color_class = word[1] %>
+      <% if @viewer == 'player' %>
+        <% classes += ' word-player' %>
+        <% if ['red', 'blue', 'green', 'white', 'black'].include?(color_class) %>
+          <% color_class = 'white' %>
+        <% end %>
+      <% end %>
+      <%= button_tag word[0], class: "#{classes} word-#{color_class}" %>
+    </div>
+  <% end %>
+</div>
+
+<div class="score-container fixed-bottom">
+  <div class="score">
+    <%= button_tag '0', class: "btn word-red" %>
+  </div>
+  <% if @game.teams == 3 %>
+    <div class="score">
+      <%= button_tag '0', class: "btn word-green" %>
+    </div>
+  <% end %>
+  <div class="score">
+    <%= button_tag '0', class: "btn word-blue" %>
+  </div>
+</div>

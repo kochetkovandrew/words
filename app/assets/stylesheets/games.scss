@@ -1,0 +1,93 @@
+.word-container {
+    flex-direction: row;
+    align-items: stretch;
+    display: flex;
+    column-count: 5;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.score-container {
+  flex-direction: row;
+  align-items: stretch;
+  display: flex;
+  column-count: 3;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.score {
+  height: 70px;
+  padding: 5px;
+  width: 20%;
+}
+
+.score button {
+  width: 100%;
+  height: 100%;
+}
+
+.word-item {
+  /*flex-basis: 20%;*/
+  //width: 20%;
+  height: 70px;
+  padding: 5px;
+}
+
+.word-btn {
+  width: 100%;
+  height: 100%;
+}
+
+.word-red {
+  color: #000 !important;
+  background-color: #ff99a5 !important;
+}
+
+.word-red-done {
+  color: #fff !important;
+  background-color: #dc3545 !important;
+  border: 3px solid black !important;
+}
+
+.word-blue {
+  color: #000 !important;
+  background-color: #80bdff !important;
+}
+
+.word-blue-done {
+  color: #fff !important;
+  background-color: #007bff !important;
+  border: 3px solid black !important;
+}
+
+.word-green {
+  color: #000 !important;
+  background-color: #8fbf9a !important;
+}
+
+.word-green-done {
+  color: #fff !important;
+  background-color: #28a745 !important;
+  border: 3px solid black !important;
+}
+
+.word-white {
+
+}
+
+.word-white-done {
+  border: 3px solid black !important;
+}
+
+.word-black {
+  color: #fff !important;
+  background-color: #6c757d !important;
+}
+
+.word-black-done {
+  color: #fff !important;
+  background-color: #343a40 !important;
+  border: 3px solid black !important;
+}

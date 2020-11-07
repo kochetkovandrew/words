@@ -1,0 +1,52 @@
+<h4>Создать новую игру</h4>
+
+<%= form_for(@game) do |f| %>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Количество команд</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="teams" id="teams2" value="2" checked>
+          <label class="form-check-label" for="teams2">
+            2 команды
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="teams" id="teams3" value="3">
+          <label class="form-check-label" for="teams3">
+            3 команды
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Размер поля</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="field_size" id="field5x5" value="5x5" checked>
+          <label class="form-check-label" for="field5x5">
+            Поле 5x5
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="field_size" id="field5x6" value="5x6">
+          <label class="form-check-label" for="field5x6">
+            Поле 5x6
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="field_size" id="field6x6" value="6x6">
+          <label class="form-check-label" for="field6x6">
+            Поле 6x6
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <%= submit_tag('Создать') %>
+<% end %>

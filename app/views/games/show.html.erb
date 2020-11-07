@@ -1,0 +1,4 @@
+<h4></h4>
+
+<%= link_to 'Для капитанов', controller: :games, action: :field, id: @game.id, viewer: :captain %>
+<%= link_to 'Для участников', controller: :games, action: :field, id: @game.id, viewer: :player %>
