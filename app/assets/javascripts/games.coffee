@@ -1,7 +1,11 @@
 jQuery ->
+  console.log '1'
+  console.log $('#page').val()
   $('.word-player').dblclick ->
     putResult($(this).context.innerText)
   if $('#page').val() == 'field'
+    console.log '2'
+    updateResults()
     window.setInterval(updateResults, 2000);
 
 putResult = (clicked_word) ->

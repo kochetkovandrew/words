@@ -38,8 +38,10 @@ class GamesController < ApplicationController
       results = [players[0]] * (length/3 + 1)
       results += [players[1]] * (length/3)
       results += ['black']
-      results += ['white'] * (length - 2*(length/3) - 1)
+      results += ['white'] * (length - 2*(length/3) - 2)
     end
+    Rails.logger.debug 'RESULTS'
+    Rails.logger.debug results.length
     results.shuffle!
     @game.results = results.to_json
     @game.save
