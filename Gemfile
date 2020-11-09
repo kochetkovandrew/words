@@ -42,7 +42,7 @@ gem 'jquery-rails'
 gem 'mini_racer', :platforms => :ruby
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.20'
 end
 
 group :development, :test do
