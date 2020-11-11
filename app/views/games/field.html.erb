@@ -19,16 +19,22 @@
   <% end %>
 </div>
 
-<div class="score-container fixed-bottom">
-  <div class="score">
-    <%= button_tag '0', class: "btn word-red" %>
-  </div>
-  <% if @game.teams == 3 %>
+<div class="fixed-bottom">
+  <div class="score-container">
     <div class="score">
-      <%= button_tag '0', class: "btn word-green" %>
+      <%= button_tag '0', class: "btn word-red" %>
     </div>
-  <% end %>
-  <div class="score">
-    <%= button_tag '0', class: "btn word-blue" %>
+    <% if @game.teams == 3 %>
+      <div class="score">
+        <%= button_tag '0', class: "btn word-green" %>
+      </div>
+    <% end %>
+    <div class="score">
+      <%= button_tag '0', class: "btn word-blue" %>
+    </div>
+  </div>
+  <div style="float: right;">
+    <%= link_to 'Новая игра', controller: :games, action: :new %>
   </div>
 </div>
+
