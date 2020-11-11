@@ -1,12 +1,24 @@
 jQuery ->
-  console.log '1'
-  console.log $('#page').val()
   $('.word-player').dblclick ->
     putResult($(this).context.innerText)
   if $('#page').val() == 'field'
-    console.log '2'
     updateResults()
     window.setInterval(updateResults, 2000);
+  $('#reset_timer').click ->
+    console.log 'xxx'
+    resetTimer()
+
+resetTimer = () ->
+  console.log 'resetTimer'
+  $.ajax
+    url: '/games/' + $('#game-id').val() + '/reset_timer'
+    dataType: 'json'
+    method: 'PUT'
+    data:
+      authenticity_token: $('[name="csrf-token"]')[0].content
+    success: (data) ->
+      console.log 'yyy'
+      updateResults()
 
 putResult = (clicked_word) ->
   console.log clicked_word
@@ -47,3 +59,4 @@ updateResults = () ->
         $.each data.results, (color, result) ->
           if color != 'game_over'
             $('.score .word-' + color)[0].innerText = result
+        $('#rest_time').text('Осталось ' + data.rest_time + ' секунд')

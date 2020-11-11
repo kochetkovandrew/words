@@ -41,6 +41,8 @@ gem 'jquery-rails'
 
 gem 'mini_racer', :platforms => :ruby
 
+gem "font-awesome-rails"
+
 group :production do
   gem 'pg', '0.20'
 end
