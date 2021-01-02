@@ -4,14 +4,12 @@ jQuery ->
   if $('#page').val() == 'field'
     updateResults()
     window.setInterval(updateResults, 2000);
-  $('#reset_timer').click ->
-    console.log 'xxx'
-    resetTimer()
+  $('.reset_timer').click ->
+    resetTimer($(this).data('seconds'))
 
-resetTimer = () ->
-  console.log 'resetTimer'
+resetTimer = (seconds) ->
   $.ajax
-    url: '/games/' + $('#game-id').val() + '/reset_timer'
+    url: '/games/' + $('#game-id').val() + '/reset_timer?seconds=' + seconds
     dataType: 'json'
     method: 'PUT'
     data:
@@ -21,7 +19,6 @@ resetTimer = () ->
       updateResults()
 
 putResult = (clicked_word) ->
-  console.log clicked_word
   $.ajax
     url: '/games/' + $('#game-id').val()
     dataType: 'json'

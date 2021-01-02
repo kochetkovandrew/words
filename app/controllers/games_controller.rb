@@ -98,7 +98,8 @@ class GamesController < ApplicationController
 
   def reset_timer
     @game = Game.find(params[:id])
-    @game.timer_at = Time.current + 90.seconds
+    seconds = (params[:seconds] || 90).to_i
+    @game.timer_at = Time.current + seconds.seconds
     @game.save
     respond_to do |format|
       format.json { head :no_content }
